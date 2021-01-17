@@ -1,0 +1,121 @@
+body {
+  background-color: #252525;
+  font-family: 'Roboto Mono', sans-serif;
+}
+
+/* main */
+#main {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: red; */
+}
+
+/* navigation bar */
+#title-heading {
+  color: #69CD97;
+  font-size: 3rem;
+  font-weight: 500;
+  /* background-color: blue; */
+}
+
+.container-fluid {
+  padding: 3% 10%;
+  /* background-color: darkgreen; */
+}
+
+/* time buttons */
+.time-container {
+    width: 200px;
+    margin: 0;
+    position: relative;
+    left: 225px;
+    bottom: 60px;
+    /* background-color: grey; */
+}
+
+.time-button {
+    margin: 0;
+    padding: 0;
+    color: black;
+    text-decoration: none;
+}
+
+.time-button:hover {
+  color: #69CD97;
+}
+
+.time-button:focus {
+  outline: none;
+  box-shadow: none;
+  color: #69CD97;
+}
+
+.time-col {
+    padding: 0;
+    text-align: center;
+}
+
+.time-heading{
+    color: #979797;
+    text-align: left;
+    padding-top: 5px;
+}
+
+@media (max-width: 625px){
+  .time-container {
+    left: 0;
+    bottom: 0;
+  }
+}
+
+/* timer */
+#timer-circle {
+  width: 335px;
+  height: 320px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000;
+}
+
+#timer {
+  padding: 20px;
+  width: auto;
+  margin: auto;
+  color: #979797;
+  text-align: center;
+  font-size: 50px;
+  background-color: transparent;
+}
+
+#finished {
+  opacity: 0.5;
+  color: #979797;
+}
+
+/* timer helper buttons */
+#button-container {
+  width: 23vw;
+  display: flex;
+  margin-top: 30px;
+  justify-content: space-between;
+  /* background-color: tan; */
+}
+
+.timer-helper-btns {
+  height: 35px;
+  border: 0.5px solid black;
+  border-radius: 5px;
+  background-color: #69CD97;
+}
+
+.timer-helper-btns:hover {
+  background-color: #979797;
+}
+
+.timer-helper-btns:focus {
+  outline: none;
+  background-color: #979797;
+}
