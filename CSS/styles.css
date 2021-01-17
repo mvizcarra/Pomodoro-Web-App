@@ -3,7 +3,7 @@ body {
   font-family: 'Roboto Mono', sans-serif;
 }
 
-/* Main Page*/
+/* main */
 #main {
   display: flex;
   align-items: center;
@@ -11,7 +11,7 @@ body {
   /* background-color: red; */
 }
 
-/* Navigation Bar */
+/* navigation bar */
 #title-heading {
   color: #69CD97;
   font-size: 3rem;
@@ -174,7 +174,7 @@ body {
   display: flex;
   margin-top: 30px;
   justify-content: space-between;
-  background-color: tan;
+  /* background-color: tan; */
 }
 
 .timer-helper-btns {
@@ -195,6 +195,9 @@ body {
 }
 
 /* about section */
+#about-header {
+  color: #252525;
+}
 
 #about-container {
   background-color: #979797;
@@ -203,6 +206,7 @@ body {
 }
 
 .profile-heading {
+  color: #69CD97;
   font-weight: 700;
   font-size: 2rem;
 }
@@ -220,7 +224,14 @@ body {
 }
 
 .profile-text {
+  justify-content: flex-start;
   text-align: left;
   line-height: 2;
   margin: 100px auto;
+  /* background-color: aqua; */
+}
+
+.name-text-container {
+  display: flex;
+  flex-direction: column;
 }
