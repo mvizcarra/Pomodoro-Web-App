@@ -1,12 +1,17 @@
 "strict mode";
 
-const times = [25, 5, 10, 15]; // array of times 
+var pomoTime = 25;
+var fiveMinBreak = 5;
+var tenMinBreak = 10;
+var fifteenMinBreak = 15;
+
+const times = [pomoTime, fiveMinBreak, tenMinBreak, fifteenMinBreak]; // array of times 
 const timeBtn = document.querySelectorAll(".time-button"); // returns a collection of elements with class .time-button
 
 // all default (pomno time is the default time to be displayed on page)
 timeBtn[0] = document.querySelector("#timer").innerHTML = times[0] + ":00";
 var currTimeDisplayed = timeBtn[0];
-var timeChosen = 25;
+var timeChosen = pomoTime;
 finishedTime();
 
 // forEach() calls a function once for each element in times array
@@ -19,22 +24,35 @@ timeBtn.forEach(function (button, index) {
     currTimeDisplayed = button; // update the current time being disaplyed
     timeChosen = times[index]; // update the time chosen
 
+    // to display the finished at time when user clicks on the times buttons
     finishedTime();
   });
 });
 
+// variable for countdown
 var interval;
+// variables for the reporting
 var pomosCompleted = 0;
+var conTime = 0;
+var breakTime = 0;
+var totalTime = 0;
 
 function countdown() {
   clearInterval(interval); // avoids timer going down fast when user clicks on start button more than once
+
   interval = setInterval(function () {
-    var timer = document.querySelector("#timer").innerHTML;
-    timer = timer.split(':');
+    var timer = document.querySelector("#timer").innerHTML; // get the time value of the timer displayed
+
+    timer = timer.split(':'); // e.g output ["25", "00"]
+
     var minutes = timer[0];
     var seconds = timer[1];
+
     seconds -= 1;
-    if (minutes < 0) return;
+
+    if (minutes < 0) {
+      return;
+    }
     else if (seconds < 0 && minutes != 0) {
       minutes -= 1;
       seconds = 59;
@@ -42,13 +60,29 @@ function countdown() {
       seconds = '0' + seconds;
     }
 
+    document.querySelector("#timer").innerHTML = minutes + ':' + seconds;
+
+    // check if time is up
     if (minutes == 0 && seconds == 0) {
-      clearInterval(interval);
-      pomosCompleted += 1;
-      document.querySelector();
+      clearInterval(interval); // if so, stop the timer at the exact time minutes and seconds == 0
+
+      // pomo
+      if (timeChosen == pomoTime) {
+        pomosCompleted += 1;
+        document.querySelector("#pomosCompleted").innerHTML = pomosCompleted;
+        conTime += timeChosen;
+        document.querySelector("#conTime").innerHTML = conTime;
+      }
+      // break
+      else if (timeChosen == fiveMinBreak || timeChosen == tenMinBreak || timeChosen == fifteenMinBreak) {
+        breakTime += timeChosen;
+        document.querySelector("#breakTime").innerHTML = breakTime;
+      }
     }
 
-    document.querySelector("#timer").innerHTML = minutes + ':' + seconds;
+    totalTime = conTime + breakTime;
+    document.querySelector("#totalTime").innerHTML = totalTime;
+
   }, 1000);
 }
 
@@ -63,7 +97,13 @@ function finishedTime () {
       hours = hours ? hours : 12; // the hour '0' should be '12'
   
       if (minutes + timeChosen > 60) {
-        hours += 1;
+        // check if hours = 12 bc if so, want to reset to 1
+        if (hours == 12) {
+          hours = 1;
+        }
+        else {
+          hours += 1;
+        }
         minutes = (minutes + timeChosen) % 60;
       }
       else if (minutes + timeChosen == 60) {
