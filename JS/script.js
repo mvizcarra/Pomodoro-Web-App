@@ -36,6 +36,8 @@ var pomosCompleted = 0;
 var conTime = 0;
 var breakTime = 0;
 var totalTime = 0;
+// for audio when timer is up
+var timesUpAudio = new Audio('audio/times-up.mp3'); // duration: 10s
 
 function countdown() {
   clearInterval(interval); // avoids timer going down fast when user clicks on start button more than once
@@ -65,6 +67,8 @@ function countdown() {
     // check if time is up
     if (minutes == 0 && seconds == 0) {
       clearInterval(interval); // if so, stop the timer at the exact time minutes and seconds == 0
+      
+      timesUpAudio.play(); // play audio when time is up
 
       // pomo
       if (timeChosen == pomoTime) {
@@ -135,5 +139,8 @@ document.querySelector("#pause-btn").addEventListener('click', function () {
 // when reset btn is pressed
 document.querySelector("#reset-btn").addEventListener('click', function () {
   clearInterval(interval);
+
   document.querySelector("#timer").innerHTML = timeChosen + ":00";
+
+  timesUpAudio.pause(); // when user clicks reset, pause audio
 });
