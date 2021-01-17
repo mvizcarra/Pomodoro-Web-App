@@ -3,7 +3,7 @@ body {
   font-family: 'Roboto Mono', sans-serif;
 }
 
-/* main */
+/* Main Page*/
 #main {
   display: flex;
   align-items: center;
@@ -11,34 +11,36 @@ body {
   /* background-color: red; */
 }
 
-/* navigation bar */
+/* Navigation Bar */
 #title-heading {
   color: #69CD97;
   font-size: 3rem;
   font-weight: 500;
   /* background-color: blue; */
+
 }
 
-.container-fluid {
-  padding: 3% 10%;
+.header-container {
+  padding: 3% 15%;
   /* background-color: darkgreen; */
+  /* position: relative; */
 }
 
 /* time buttons */
 .time-container {
-    width: 200px;
-    margin: 0;
-    position: relative;
-    left: 225px;
-    bottom: 60px;
-    /* background-color: grey; */
+  width: 200px;
+  margin: 0;
+  position: relative;
+  left: 225px;
+  bottom: 60px;
+  /* background-color: grey; */
 }
 
 .time-button {
-    margin: 0;
-    padding: 0;
-    color: black;
-    text-decoration: none;
+  margin: 0;
+  padding: 0;
+  color: black;
+  text-decoration: none;
 }
 
 .time-button:hover {
@@ -52,24 +54,95 @@ body {
 }
 
 .time-col {
-    padding: 0;
-    text-align: center;
+  padding: 0;
+  text-align: center;
 }
 
-.time-heading{
-    color: #979797;
-    text-align: left;
-    padding-top: 5px;
+.time-heading {
+  color: #979797;
+  text-align: left;
+  padding-top: 5px;
 }
 
-@media (max-width: 625px){
+@media (max-width: 625px) {
   .time-container {
     left: 0;
     bottom: 0;
   }
 }
 
-/* timer */
+/* report section */
+.report-container {
+  text-align: center;
+  align-items: center;
+  width: 80%;
+  margin-bottom: 3%;
+}
+
+.report-heading {
+  padding: 5% 15%;
+  color: #979797;
+}
+
+.left-col {
+  margin: auto;
+}
+
+.timer-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /*   background-color: blue; */
+  color: #979797;
+}
+
+.efficiency-heading {
+  font-weight: 100;
+  font-size: 3rem;
+  color: #979797;
+}
+
+#effeciencyVar {
+  font-weight: 700;
+  font-size: 5rem;
+  color: #979797;
+}
+
+.efficiency-percent {
+  font-weight: 700;
+  font-size: 5rem;
+  padding: 5% 0;
+  color: #979797;
+}
+
+.efficiency-text {
+  /* width: 90%; */
+  color: #979797;
+}
+
+.down-btn {
+  padding-bottom: 5%;
+  color: #979797;
+}
+
+@media (max-width: 1198px) {
+
+  .report-heading {
+    padding: 1% 3%;
+  }
+
+  .left-col {
+    margin-bottom: 3%;
+  }
+
+  .right-col {
+    margin-top: 3%;
+  }
+}
+
+/* timer helper buttons */
 #timer-circle {
   width: 335px;
   height: 320px;
@@ -97,11 +170,11 @@ body {
 
 /* timer helper buttons */
 #button-container {
-  width: 23vw;
+  width: 300px;
   display: flex;
   margin-top: 30px;
   justify-content: space-between;
-  /* background-color: tan; */
+  background-color: tan;
 }
 
 .timer-helper-btns {
@@ -109,6 +182,7 @@ body {
   border: 0.5px solid black;
   border-radius: 5px;
   background-color: #69CD97;
+  margin: 0 2%;
 }
 
 .timer-helper-btns:hover {
@@ -118,4 +192,35 @@ body {
 .timer-helper-btns:focus {
   outline: none;
   background-color: #979797;
+}
+
+/* about section */
+
+#about-container {
+  background-color: #979797;
+  padding: 3% 15% 3%;
+  text-align: center;
+}
+
+.profile-heading {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.profile-img-alyssa {
+  float: left;
+  width: 20%;
+  margin-right: 30px;
+}
+
+.profile-img-michael {
+  float: right;
+  width: 20%;
+  margin-left: 30px;
+}
+
+.profile-text {
+  text-align: left;
+  line-height: 2;
+  margin: 100px auto;
 }
