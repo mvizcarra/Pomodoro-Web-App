@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- <meta charset="utf-8" /> -->
+    <title>pomocon</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+
+    <!-- CSS Stylesheet -->
+    <!-- <link rel="stylesheet" href="CSS/styles.css" /> -->
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <!-- Web Icon -->
+    <link rel="icon"
+        href="https://cdn.glitch.com/f7112330-d676-40bf-82d7-fa7d3190d3a2%2Fpc-web-icon.png?v=1610839409886" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap: 200,300,400,500,600,700"
+        rel="stylesheet">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+    </script>
+</head>
+
+<body>
+    <section id="main">
+        <!-- navigation bar -->
+        <div class="container-fluid header-container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <a id="title-heading" class="navbar-brand" href="">pomocon</a>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about-pomo-container">about pomocon</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#meet-devs-container">meet developers</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <!-- time Buttons -->
+            <div class="container time-container">
+                <div class="row">
+                    <div class="col-3 time-heading">
+                        <div>pomo</div>
+                    </div>
+                    <div class="col-3 time-col">
+                        <button id="pomo-btn" type="button" class="btn btn-link time-button">25</button>
+                    </div>
+                    <div class="col-3"></div>
+                    <div class="col-3"></div>
+                </div>
+                <div class="row">
+                    <div class="col-3 time-heading">
+                        <p>break</p>
+                    </div>
+                    <div class="col-3 time-col">
+                        <button id="five-min-btn" type="button" class="btn btn-link time-button">5</button>
+                    </div>
+                    <div class="col-3 time-col">
+                        <button id="ten-min-btn" type="button" class="btn btn-link time-button">10</button>
+                    </div>
+                    <div class="col-3 time-col">
+                        <button id="fifteen-min-btn" type="button" class="btn btn-link time-button">15</button>
+                    </div>
+                </div>
+            </div>
+            <!-- end of time buttons -->
+
+        </div>
+        <!-- end of navigation bar -->
+
+        <!-- report section -->
+        <div class="container-fluid report-container">
+            <div class="row">
+                <!-- left-col report data -->
+                <div class="col-xl-4 col-lg-12 left-col">
+                    <h3 class="report-heading">pomodoros completed: <span id="pomosCompleted">0</span></h3>
+                    <h3 class="report-heading">concentrated time: <span id="conTime">0</span> minutes</h3>
+                    <h3 class="report-heading">break time: <span id="breakTime">0</span> minutes</h3>
+                    <h3 class="report-heading">total time: <span id="totalTime">0</span> minutes</h3>
+                </div>
+
+                <!-- timer components-->
+                <div class="col-xl-4 col-lg-12 timer-col">
+                    <div id="timer-circle">
+                        <div id="timer-finished-container">
+                            <div id="timer"></div>
+                            <div id="finished">Finish at: <span id="time-finished-at"></span></div>
+                        </div>
+                        <svg width="350" height="350">
+                            <g>
+                                <circle id="circle" class="circle_animation" r="164" cx="175" cy="175" stroke-width="8"
+                                    stroke="#69CD97" fill="none" />
+                            </g>
+                        </svg>
+                    </div>
+                    <!-- timer helper buttons -->
+                    <div id="button-container">
+                        <button id="start-btn" class="timer-helper-btns">Start</button>
+                        <button id="pause-btn" class="timer-helper-btns">Pause</button>
+                        <button id="reset-btn" class="timer-helper-btns">Reset</button>
+                    </div>
+                </div>
+                <!-- end of timer components -->
+
+                <!-- right-col report data -->
+                <div class="col-xl-4 col-lg-12 right-col">
+                    <h2 class="efficiency-heading">efficiency</h2>
+                    <h2 class="efficiency-percent"><span id="effeciencyVar">0</span>%</h2>
+                </div>
+
+            </div>
+        </div>
+        <a class="btn btn-dark down-btn" type="button" href="#meet-devs-container">
+            <i class="fas fa-arrow-circle-down fa-4x"></i>
+        </a>
+        <!-- end of report  -->
+
+        <!-- about pomocon -->
+        <div id="about-pomo-container" class="container-fluid">
+            <h1 id="about-pomo-header" class="profile-heading">what is pomocon?</h1>
+          
+            <p class="about-pomo-text">
+              The name <span class="about-pomo-bold">pomocon</span> is a combination of Pomodoro and concentration. 
+              <span class="about-pomo-bold">pomocon</span> implements the classic Pomodoro Techinique, which
+              calls for 25 minute work intervals, called Pomodoros. Each Pomodoro is followed by a short break (5 minutes). After 4 Pomodoros, 
+              a longer break is advised (10 or 15 minutes). Taking this protocol as maximum efficiency, we can compare your times and determine your own efficiency.
+              <br><br>
+              We created <span class="about-pomo-bold">pomocon</span> as our project for our first hackathon, HackDavis 2021. 
+              The theme of HackDavis 2021 was for the betterment of social good. Due to COVID-19, we are spending much more time cooped up inside our rooms. 
+              When spending so much time and taking care of all of our responsibilites in one space, it can be quite overwhelming and harder to differentiate 
+              time to work from time to relax, especially for students. Therefore, using <span class="about-pomo-bold">pomocon</span> can help us take back 
+              control of our time.
+            </p>
+
+            <h1 id = "features-header" class="profile-heading">features</h1>
+            <ul id = "features">
+                <li>- Responsive design for web and mobile.</li>
+                <li>- 3 timer intervals for breaks.</li>
+                <li>- Audio notification when timer is up (press reset button to stop audio).</li>
+                <li>- Receive a report of how many completed pomos, how much time you spent concentrated and on breaks, total time, and efficiency. </li>
+            </ul>
+          
+          <a class="btn down-btn" type="button" href="#meet-devs-container">
+            <i class="fas fa-arrow-circle-down fa-4x"></i>
+          </a>
+          
+        </div>
+        <!-- end of about pomocon -->
+
+        <!-- about section -->
+        <div id="meet-devs-container" class="container-fluid">
+            <h1 id="meet-header" class="profile-heading">meet developers</h1>
+            <!-- alyssa -->
+            <div class="profile-text">
+                <img class="profile-img-alyssa" src="/images/alyssa-profile-img.png" alt="alyssa-profile-img">
+                <h3 class="profile-heading">Alyssa Rodriguez</h3>
+                <p>
+                    I am a senior undergraduate majoring in computer science (CS) at the University of California,
+                    Davis.I transferred to UC Davis last year from a junior college called Diablo Valley College,
+                    located in Pleasant Hill, CA. I am expected to graduate June 2021.
+                    <br /> <br />
+                    I am currently work as a student programmer at UC Davis’ Information & Educational Technology
+                    (IET) Data Center.My coding journey started my senior year of high school. Since then, I have been
+                    committed to pursuing CS and aspiring to be a software engineer.I am a proud woman in CS who is
+                    passionate, hardworking, team-oriented, and excited to apply my skill set and knowledge in the
+                    industry.
+                    <br /><br />
+                    In my free time, I enjoy playing basketball, going on hikes, drinking coffee or tea, exploring
+                    antique shops, and photography. Some of my hobbies include collecting vintage cameras, customizing
+                    mechanical keyboards, and upgrading my setup.
+
+                </p>
+            </div>
+            <!-- michael -->
+            <div class="profile-text">
+                <img class="profile-img-michael" src="/images/michael-profile-img.png" alt="michael-profile-img">
+                <h3 class="profile-heading">Michael Vizcarra</h3>
+                <p>
+                    Hello! I am a Computer Science Major and Communications Minor at Sacramento State.
+                    My expected graduation is May 2022. In addition to my academic goals, I compete for the
+                    Sac State Men's Tennis Team. <br> <br>
+                    When I was young I was fascinated by videogames and all of the different worlds you can experience.
+                    It was through videogames that I discovered my passion for CS. As I got older and fell in love with
+                    sports, I also
+                    started to realize the scope of software development and all the different fields I can explore and
+                    impact.
+                    Fitness wearables, web development, and mobile development are all areas I'm currently infatuated
+                    with.
+                    I can't wait to learn more and more about them.
+                </p>
+            </div>
+        </div>
+        <!-- end of about -->
+    </section>
+    <footer>
+        <p>© <span>Pomocon</span> 2021</p>
+        <p>Made by <span>Alyssa Rodriguez</span> & <span>Michael Vizcarra</span></p>
+    </footer>
+    <script src="js/script.js"></script>
+</body>
+
+</html>
