@@ -137,6 +137,12 @@ body {
   background-color: transparent;
 }
 
+@media (max-width: 725px) {
+  .down-btn {
+    display: none;
+  }
+}
+
 @media (max-width: 1198px) {
 
   .report-heading {
